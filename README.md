@@ -1,39 +1,24 @@
-# ftc_app
-FTC Android Studio project to create FTC Robot Controller app.
+# 2015-16 Evanston Township High School FTC Robotics Team
 
-This is the FTC SDK that can be used to create an FTC Robot Controller app, with custom op modes.
-The FTC Robot Controller app is designed to work in conjunction with the FTC Driver Station app.
-The FTC Driver Station app is available through Google Play.
+----------
 
-To use this SDK, download/clone the entire project to your local computer.
-Use Android Studio to import the folder  ("Import project (Eclipse ADT, Gradle, etc.)").
+## Overview
+This repository contains all the code for the 2015-16 ETHS FTC team's robot.
 
-Documentation for the FTC SDK are included with this repository.  There is a subfolder called "doc" which contains several subfolders:
+## Code Base
+The code is based on the [FTC SDK Project](https://github.com/ftctechnh/ftc_app) which provides the robot controller app main activity, as well as code that allows us to interface with the 'Modern' control system.
 
- * The folder "apk" contains the .apk files for the FTC Driver Station and FTC Robot Controller apps.
- * The folder "javadoc" contains the JavaDoc user documentation for the FTC SDK.
- * The folder "tutorial" contains PDF files that help teach the basics of using the FTC SDK.
+We use this code under the understanding that
 
-For technical questions regarding the SDK, please visit the FTC Technology forum:
+> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS [Qualcomm Technologies, Inc.] "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
 
-  http://ftcforum.usfirst.org/forumdisplay.php?156-FTC-Technology
+and that
 
-In this latest version of the FTC SDK (20150803_001) the following changes should be noted:
+> IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS [Qualcomm Technologies, Inc.] BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
- * New user interfaces for FTC Driver Station and FTC Robot Controller apps.
- * An init() method is added to the OpMode class.
-   - For this release, init() is triggered right before the start() method.
-   - Eventually, the init() method will be triggered when the user presses an "INIT" button on driver station.
-   - The init() and loop() methods are now required (i.e., need to be overridden in the user's op mode).
-   - The start() and stop() methods are optional.
- * A new LinearOpMode class is introduced.
-   - Teams can use the LinearOpMode mode to create a linear (not event driven) program model.
-   - Teams can use blocking statements like Thread.sleep() within a linear op mode.
- * The API for the Legacy Module and Core Device Interface Module have been updated.
-   - Support for encoders with the Legacy Module is now working.
- * The hardware loop has been updated for better performance.
+as stated in the license, which remains included in the code.
 
+## Modifications
+Our (the 2015-16 ETHS FTC Robotics Team's) code is located in the [`com.evanstonrobotics.ftcrobot`](https://github.com/HotelCalifornia/ETHS-FTC-15-16/tree/master/FtcRobotController/src/main/java/com/evanstonrobotics/ftcrobot) package, and includes `OpModes` custom to our robot, as well as a Registry which allows our `OpModes` to be visible to the main activity.
 
-T. Eng
-August 3, 2015
-
+In the SDK's `opmodes` package ([`com.qualcomm.ftcrobotcontroller.opmodes`](https://github.com/HotelCalifornia/ETHS-FTC-15-16/tree/master/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes)),  one minor change was made to the [`FtcOpModeRegister`](https://github.com/HotelCalifornia/ETHS-FTC-15-16/blob/master/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/FtcOpModeRegister.java#L60-L63) class to make adding our `OpModes` to the app as painless as possible.
