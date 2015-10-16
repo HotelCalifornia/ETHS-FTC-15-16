@@ -1,0 +1,23 @@
+- navigation:
+  - translation:
+    - forward
+    - backward
+  - rotation:
+    - clockwise
+    - counterclockwise
+- sensing:
+  - collision:
+    - obstacles
+  - goals:
+    - colour
+    - light
+- manipulation:
+  - arm:
+    - extend
+    - retract
+    - rotation
+  - balls:
+    - spin
+    - eject
+  - rescue:
+    - extend
