@@ -17,6 +17,5 @@ public class Registry {
     static {
         REGISTRY = new HashMap<>();
         REGISTRY.put("TestOpMode", TestOpMode.class);
-
     }
 }
