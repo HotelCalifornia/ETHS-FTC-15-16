@@ -15,6 +15,10 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 21
+
+        versionCode System.getenv('BUILD_NUMBER') as Integer ?: 0
+        versionName '0.1'
+        project.ext.set('archivesBaseName', 'ETHS FTC Robotics Team Robot Controller-'+versionName+'-'+versionCode)
     }
     compileSdkVersion 21
     buildToolsVersion '23.0.1'

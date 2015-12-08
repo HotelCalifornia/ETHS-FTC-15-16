@@ -19,10 +19,3 @@ allprojects {
         }
     }
 }
-
-ext {
-	minSdkVersion = 19
-	targetSdkVersion = 21
-	compileSdkVersion = 21
-	buildToolsVersion = '21.1.2'
-}
