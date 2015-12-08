@@ -15,7 +15,7 @@ public class Registry {
      */
     public static final Map<String, Class> REGISTRY;
     static {
-        REGISTRY = new HashMap<>();
+        REGISTRY = new HashMap<String, Class>();
         REGISTRY.put("TestOpMode", TestOpMode.class);
     }
 }
