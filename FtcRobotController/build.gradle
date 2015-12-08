@@ -21,7 +21,7 @@ android {
         project.ext.set('archivesBaseName', 'ETHS FTC Robotics Team Robot Controller-'+versionName+'-'+versionCode)
     }
     compileSdkVersion 21
-    buildToolsVersion '23.0.1'
+    buildToolsVersion '23.0.2'
 }
 
 repositories {
