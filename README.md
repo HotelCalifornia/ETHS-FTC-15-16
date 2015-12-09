@@ -2,7 +2,7 @@
 
 ----------
 
-![](http://159.203.30.37:8080/job/ETHS_FTC_2015-16/badge/icon)
+Build status: ![](http://159.203.30.37:8080/job/ETHS_FTC_2015-16/badge/icon)
 
 ## Overview
 This repository contains all the code for the 2015-16 ETHS FTC team's robot.
