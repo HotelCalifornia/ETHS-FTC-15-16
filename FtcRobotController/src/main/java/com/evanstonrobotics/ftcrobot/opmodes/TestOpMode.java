@@ -13,7 +13,7 @@ public class TestOpMode extends LinearOpMode {
 
         DcMotor motorLeft = hardwareMap.dcMotor.get("motorLeft");
         DcMotor motorRight = hardwareMap.dcMotor.get("motorRight");
-        motorRight.setDirection(DcMotor.Direction.REVERSE);
+        motorLeft.setDirection(DcMotor.Direction.REVERSE);
 
         motorRight.setPower(0.5D);
         motorLeft.setPower(0.5D);
