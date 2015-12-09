@@ -17,15 +17,5 @@ public class TestOpMode extends LinearOpMode {
 
         motorRight.setPower(0.5D);
         motorLeft.setPower(0.5D);
-        sleep(1000L);
-
-        motorRight.setPower(0.25D);
-        sleep(500L);
-
-        motorRight.setPower(0.5D);
-        sleep(1000L);
-
-        motorLeft.setPower(0.25D);
-        sleep(500L);
     }
 }
