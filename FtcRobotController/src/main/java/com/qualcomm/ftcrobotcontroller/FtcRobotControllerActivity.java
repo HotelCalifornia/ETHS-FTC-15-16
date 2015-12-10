@@ -143,7 +143,9 @@ public class FtcRobotControllerActivity extends Activity {
 
         utility = new Utility(this);
         context = this;
-        SensorService.start(context);
+        if(!SensorService.getStarted()) {
+            SensorService.start(context);
+        }
         entireScreenLayout = (LinearLayout) findViewById(R.id.entire_screen);
         buttonMenu = (ImageButton) findViewById(R.id.menu_buttons);
         buttonMenu.setOnClickListener(new View.OnClickListener() {
