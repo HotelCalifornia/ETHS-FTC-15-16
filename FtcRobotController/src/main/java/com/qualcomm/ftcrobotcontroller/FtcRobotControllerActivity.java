@@ -53,6 +53,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.evanstonrobotics.ftcrobot.utility.SensorService;
 import com.qualcomm.ftccommon.DbgLog;
 import com.qualcomm.ftccommon.FtcEventLoop;
 import com.qualcomm.ftccommon.FtcRobotControllerService;
@@ -84,6 +85,7 @@ public class FtcRobotControllerActivity extends Activity {
 
     protected UpdateUI.Callback callback;
     protected Context context;
+
     private Utility utility;
     protected ImageButton buttonMenu;
 
@@ -141,6 +143,7 @@ public class FtcRobotControllerActivity extends Activity {
 
         utility = new Utility(this);
         context = this;
+        SensorService.start(context);
         entireScreenLayout = (LinearLayout) findViewById(R.id.entire_screen);
         buttonMenu = (ImageButton) findViewById(R.id.menu_buttons);
         buttonMenu.setOnClickListener(new View.OnClickListener() {
