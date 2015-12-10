@@ -15,6 +15,7 @@ public class SensorService {
     private static boolean started = false;
 
     private static float[] accelerometer = new float[3];
+    private static float[] gravity = new float[3];
 
     public static void start(final Context applicationContext) {
         if(started) {
@@ -29,6 +30,10 @@ public class SensorService {
                 switch(type) {
                     case Sensor.TYPE_ACCELEROMETER:
                         accelerometer = event.values.clone();
+                        break;
+                    case Sensor.TYPE_GRAVITY:
+                        gravity = event.values.clone();
+                        break;
                 }
             }
 
@@ -45,6 +50,10 @@ public class SensorService {
 
     public static float[] getAccelerometer() {
         return accelerometer;
+    }
+
+    public static float[] getGravity() {
+        return gravity;
     }
 
     public boolean getStarted() {
