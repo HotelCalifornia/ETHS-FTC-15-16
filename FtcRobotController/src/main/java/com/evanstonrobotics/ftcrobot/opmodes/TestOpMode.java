@@ -28,7 +28,7 @@ public class TestOpMode extends OpMode {
         //testing ready-smoothed accelerometer values
         float[] grav = SensorService.getGravity();
         telemetry.addData("gravity",
-                String.format("(%.5f, %.5f, %.5f)", grav[0], grav[1], grav[3]));
+                String.format("(%.5f, %.5f, %.5f)", grav[0], grav[1], grav[2]));
         //motorRight.setPower(0.25D);
         //motorLeft.setPower(0.25D);
     }
