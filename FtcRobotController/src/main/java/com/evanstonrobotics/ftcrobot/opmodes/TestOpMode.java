@@ -22,7 +22,7 @@ public class TestOpMode extends OpMode {
     @Override
     public void loop() {
         //testing accelerometer values
-        float[] accel = SensorService.getAccelerometer();
+        float[] accel = SensorService.INSTANCE.getAccelerometer();
         telemetry.addData("accelerometer",
                 String.format("(%.5f, %.5f, %.5f)", accel[0], accel[1], accel[2]));
         //motorRight.setPower(0.25D);

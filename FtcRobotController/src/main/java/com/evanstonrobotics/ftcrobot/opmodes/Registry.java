@@ -1,10 +1,12 @@
 package com.evanstonrobotics.ftcrobot.opmodes;
 
+import com.evanstonrobotics.ftcrobot.utility.Test0OpMode;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Alex
+ * @author Alex Brooke
  * A registry containing a map of our custom opmodes ("Name"=>Name.class)
  * {@see com.qualcomm.ftcrobotcontroller.opmodes.FtcOpModeRegister#register(OpModeManager)}
  */
@@ -15,7 +17,11 @@ public class Registry {
      */
     public static final Map<String, Class> REGISTRY;
     static {
+        //Technically, we could omit the explicit type parameter declaration, but Java didn't let you do that before
+        // 1.6, so we'll leave it in, 'k
         REGISTRY = new HashMap<String, Class>();
-        REGISTRY.put("TestOpMode", TestOpMode.class);
+
+        REGISTRY.put("Java Test OpMode", TestOpMode.class);
+        REGISTRY.put("Kotlin Test OpMode", Test0OpMode.class);
     }
 }
