@@ -1,7 +1,5 @@
 package com.evanstonrobotics.ftcrobot.opmodes;
 
-import com.evanstonrobotics.ftcrobot.utility.Test0OpMode;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -222,6 +222,8 @@ public class FtcRobotControllerActivity extends Activity {
         super.onStop();
 
         if (controllerService != null) unbindService(connection);
+        //GC would probably take care of this anyway, but best practices are a thing so there
+        if(SensorService.INSTANCE.getStarted()) SensorService.INSTANCE.stop();
 
         RobotLog.cancelWriteLogcatToDisk(this);
     }

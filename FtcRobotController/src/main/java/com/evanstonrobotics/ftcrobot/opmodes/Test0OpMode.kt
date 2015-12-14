@@ -1,5 +1,6 @@
-package com.evanstonrobotics.ftcrobot.utility
+package com.evanstonrobotics.ftcrobot.opmodes
 
+import com.evanstonrobotics.ftcrobot.utility.SensorService
 import com.qualcomm.robotcore.eventloop.opmode.OpMode
 import com.qualcomm.robotcore.hardware.DcMotor
 
