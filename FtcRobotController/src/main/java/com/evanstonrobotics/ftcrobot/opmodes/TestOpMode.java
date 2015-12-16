@@ -24,7 +24,7 @@ public class TestOpMode extends OpMode {
     public void loop() {
         float left = -gamepad1.left_stick_y;
         float right = -gamepad1.right_stick_y;
-        
+
         right = Range.clip(right, -1, 1);
         left = Range.clip(left, -1, 1);
 
@@ -34,6 +34,8 @@ public class TestOpMode extends OpMode {
         float[] accel = SensorService.INSTANCE.getAccelerometer();
         telemetry.addData("accelerometer",
                 String.format("(%.5f, %.5f, %.5f)", accel[0], accel[1], accel[2]));
+        telemetry.addData("gamepad1",
+                String.format("Left Stick: %.5f, Right Stick %.5f", gamepad1.left_stick_y, gamepad1.right_stick_y));
         motorRight.setPower(right);
         motorLeft.setPower(left);
     }
