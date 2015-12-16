@@ -15,6 +15,7 @@ public class Registry {
      */
     public static final Map<String, Class> REGISTRY;
     static {
+
         //Technically, we could omit the explicit type parameter declaration, but Java didn't let you do that before
         // 1.6, so we'll leave it in, 'k
         REGISTRY = new HashMap<String, Class>();
