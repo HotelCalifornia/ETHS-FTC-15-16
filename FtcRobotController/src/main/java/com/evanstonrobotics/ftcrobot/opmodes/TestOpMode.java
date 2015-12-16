@@ -38,11 +38,9 @@ public class TestOpMode extends OpMode {
         left = (float) scaleInput(left);
 
         if(gamepad1.a) {
-            wheeliePos += 0.1;
+            wheelieBar.setPosition(wheelieBar.getPosition() + 0.1);
         }
-
-        wheelieBar.setPosition(wheeliePos);
-
+        
         motorRight.setPower(right);
         motorLeft.setPower(left);
 
