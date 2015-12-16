@@ -2,7 +2,7 @@
 
 ----------
 
-Build status: ![](http://ci.hotelc.me:8080/job/ETHS_FTC_2015-16/badge/icon)
+Build status: ![](http://ci.hotelc.me:8080/buildStatus/icon?job=ETHS_FTC_2015-16)
 
 Compiled APK found [here](http://ci.hotelc.me:8080/job/ETHS_FTC_2015-16/ws/FtcRobotController/build/outputs/apk/)
 
