@@ -14,6 +14,7 @@ public class TestOpMode extends OpMode {
     private DcMotor motorLeft;
     private DcMotor motorRight;
     private Servo wheelieBar;
+    private double wheeliePos;
 
     @Override
     public void init() {
@@ -22,13 +23,13 @@ public class TestOpMode extends OpMode {
         motorRight.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
 
         wheelieBar = hardwareMap.servo.get("wheelieBar");
+        wheeliePos = 0;
     }
 
     @Override
     public void loop() {
         float left = -gamepad1.left_stick_y;
         float right = -gamepad1.right_stick_y;
-        double wheeliePos = 0;
 
         right = Range.clip(right, -1, 1);
         left = Range.clip(left, -1, 1);
