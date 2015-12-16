@@ -19,7 +19,7 @@ public class Registry {
         // 1.6, so we'll leave it in, 'k
         REGISTRY = new HashMap<String, Class>();
 
-        REGISTRY.put("Java Test OpMode", TestOpMode.class);
-        REGISTRY.put("Kotlin Test OpMode", Test0OpMode.class);
+        REGISTRY.put("Manual OpMode", ManualOpMode.class);
+        REGISTRY.put("Autonomous OpMode", AutoOpMode.class);
     }
 }
