@@ -21,5 +21,6 @@ public class Registry {
 
         REGISTRY.put("Manual OpMode", ManualOpMode.class);
         REGISTRY.put("Autonomous OpMode", AutoOpMode.class);
+        REGISTRY.put("Test Manual", TestOpMode.class);
     }
 }
