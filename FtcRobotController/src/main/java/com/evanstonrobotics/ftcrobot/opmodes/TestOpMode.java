@@ -3,6 +3,7 @@ package com.evanstonrobotics.ftcrobot.opmodes;
 import com.evanstonrobotics.ftcrobot.utility.SensorService;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 /**
@@ -12,32 +13,46 @@ public class TestOpMode extends OpMode {
 
     private DcMotor motorLeft;
     private DcMotor motorRight;
+    private Servo wheelieBar;
 
     @Override
     public void init() {
         motorLeft = hardwareMap.dcMotor.get("motorLeft");
         motorRight = hardwareMap.dcMotor.get("motorRight");
         motorRight.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
+
+        wheelieBar = hardwareMap.servo.get("wheelieBar");
     }
 
     @Override
     public void loop() {
         float left = -gamepad1.left_stick_y;
         float right = -gamepad1.right_stick_y;
+        double wheeliePos = 0;
 
         right = Range.clip(right, -1, 1);
         left = Range.clip(left, -1, 1);
 
         right = (float) scaleInput(right);
         left = (float) scaleInput(left);
+
+        if(gamepad1.a) {
+            wheeliePos += 0.1;
+        }
+
+        wheelieBar.setPosition(wheeliePos);
+
+        motorRight.setPower(right);
+        motorLeft.setPower(left);
+
         //testing accelerometer values
         float[] accel = SensorService.INSTANCE.getAccelerometer();
         telemetry.addData("accelerometer",
                 String.format("(%.5f, %.5f, %.5f)", accel[0], accel[1], accel[2]));
         telemetry.addData("gamepad1",
                 String.format("Left Stick: %.5f, Right Stick %.5f", gamepad1.left_stick_y, gamepad1.right_stick_y));
-        motorRight.setPower(right);
-        motorLeft.setPower(left);
+        telemetry.addData("servo",
+                String.format("Servo: %.5f", wheelieBar.getPosition()));
     }
 
     private double scaleInput(double input) {
