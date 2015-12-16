@@ -17,7 +17,7 @@ public class TestOpMode extends OpMode {
     public void init() {
         motorLeft = hardwareMap.dcMotor.get("motorLeft");
         motorRight = hardwareMap.dcMotor.get("motorRight");
-        motorLeft.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
+        motorRight.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
     }
 
     @Override
