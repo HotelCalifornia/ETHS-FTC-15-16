@@ -2,7 +2,8 @@ package com.evanstonrobotics.ftcrobot.utility;
 
 public enum STATES{
     MoveToMountain,
-    ClimbMountain
+    ClimbMountain,
+    End
 }
 
 

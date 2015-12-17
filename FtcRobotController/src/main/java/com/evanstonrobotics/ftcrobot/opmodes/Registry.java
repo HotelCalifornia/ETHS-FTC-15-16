@@ -21,7 +21,7 @@ public class Registry {
         REGISTRY = new HashMap<String, Class>();
 
         REGISTRY.put("Manual OpMode", ManualOpMode.class);
-        REGISTRY.put("Autonomous OpMode", AutoOpMode.class);
+        REGISTRY.put("Autonomous OpMode", AutoTestOpMode.class);
         REGISTRY.put("Test Manual", TestOpMode.class);
     }
 }

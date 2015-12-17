@@ -14,7 +14,6 @@ public class TestOpMode extends OpMode {
     private DcMotor motorLeft;
     private DcMotor motorRight;
     private Servo wheelieBar;
-    private double wheeliePos;
 
     @Override
     public void init() {
@@ -23,7 +22,6 @@ public class TestOpMode extends OpMode {
         motorRight.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
 
         wheelieBar = hardwareMap.servo.get("wheelieBar");
-        wheeliePos = 0;
     }
 
     @Override

@@ -11,6 +11,9 @@ import com.qualcomm.robotcore.hardware.DcMotor
  */
 
 public class AutoOpMode : OpMode() {
+    override fun init() {
+        throw UnsupportedOperationException()
+    }
 
     private val motorLeft : DcMotor = hardwareMap.dcMotor.get("motorLeft")
     private val motorRight : DcMotor = hardwareMap.dcMotor.get("motorRight")
@@ -21,9 +24,6 @@ public class AutoOpMode : OpMode() {
 
     private var state : STATES = STATES.MoveToMountain
 
-    override fun init() {
-        motorLeft.direction = DcMotor.Direction.REVERSE
-    }
 
     override fun loop() {
         when(state) {
