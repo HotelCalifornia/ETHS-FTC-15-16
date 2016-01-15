@@ -3,7 +3,6 @@ package com.evanstonrobotics.ftcrobot.opmodes;
 import com.evanstonrobotics.ftcrobot.utility.SensorService;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 /**
@@ -13,15 +12,12 @@ public class TestOpMode extends OpMode {
 
     private DcMotor motorLeft;
     private DcMotor motorRight;
-    private Servo wheelieBar;
 
     @Override
     public void init() {
         motorLeft = hardwareMap.dcMotor.get("motorLeft");
         motorRight = hardwareMap.dcMotor.get("motorRight");
         motorRight.setDirection(DcMotor.Direction.REVERSE); // set up front wheel drive
-
-        wheelieBar = hardwareMap.servo.get("wheelieBar");
     }
 
     @Override
@@ -35,14 +31,6 @@ public class TestOpMode extends OpMode {
         right = (float) scaleInput(right);
         left = (float) scaleInput(left);
 
-        if(gamepad1.a) {
-            wheelieBar.setPosition(0.25d);
-        }
-
-        if(gamepad1.b) {
-            wheelieBar.setPosition(0d);
-        }
-
         motorRight.setPower(right);
         motorLeft.setPower(left);
 
@@ -52,8 +40,6 @@ public class TestOpMode extends OpMode {
                 String.format("(%.5f, %.5f, %.5f)", accel[0], accel[1], accel[2]));
         telemetry.addData("gamepad1",
                 String.format("Left Stick: %.5f, Right Stick %.5f", gamepad1.left_stick_y, gamepad1.right_stick_y));
-        telemetry.addData("servo",
-                String.format("Servo: %.5f", wheelieBar.getPosition()));
     }
 
     private double scaleInput(double input) {
@@ -66,7 +52,7 @@ public class TestOpMode extends OpMode {
         if (index > 16) {
             index = 16;
         }
-        double scale = 0.0;
+        double scale;
         if (input < 0) {
             scale = -scaleArray[index];
         } else {
