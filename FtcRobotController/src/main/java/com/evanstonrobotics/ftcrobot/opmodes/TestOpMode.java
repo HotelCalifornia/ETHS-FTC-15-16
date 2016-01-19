@@ -25,11 +25,11 @@ public class TestOpMode extends OpMode {
         float left = -gamepad1.left_stick_y;
         float right = -gamepad1.right_stick_y;
 
-        right = Range.clip(right, -1, 1);
-        left = Range.clip(left, -1, 1);
+        //right = Range.clip(right, -1, 1);
+        //left = Range.clip(left, -1, 1);
 
-        right = (float) scaleInput(right);
-        left = (float) scaleInput(left);
+        //right = (float) scaleInput(right);
+        //left = (float) scaleInput(left);
 
         motorRight.setPower(right);
         motorLeft.setPower(left);
